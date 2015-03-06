@@ -8,14 +8,47 @@ $.fn.randomise = function() {
 				$(el).attr('value', random_date());
 				break;
 			case 'text':
-				$(el).attr('value', random_string());
+				var randomisable_label = has_randomisable_label(el);
+
+				if (randomisable_label) {
+					$(el).attr('value', call_random(randomisable_label));
+				} else {
+					$(el).attr('value', random_string());
+				}
 				break;
 			case 'email':
-				console.log(random_email());
 				$(el).attr('value', random_email());
 				break;
 		}
 	});
+
+	function call_random(type) {
+		random = "";
+
+		switch (type) {
+			case 'email':
+				random = random_email();
+				break;
+			default:
+				random = random_string();
+		}
+
+		return random;
+ 	}
+
+	function has_randomisable_label(el) {
+  	var randomisable_labels = ['email'];
+		var label = $(el).prevAll('label').text().toLowerCase();
+		var randomisable_label = "";
+
+		$.each(randomisable_labels, function (key, value) {
+			if (label.indexOf(value) > -1) {
+     		randomisable_label = value;
+	   	}
+		});
+
+		return randomisable_label;
+ 	}
 
 	function random_email() {
   	return random_string(random_number(10)) + '@' + random_string(random_number(10)) + '.com';
@@ -57,5 +90,7 @@ $.fn.randomise = function() {
 		n = n + '';
 		return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 	}
+
+	return this;
 };
 
