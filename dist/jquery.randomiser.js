@@ -24,7 +24,7 @@ $.fn.randomise = function() {
 
 	function call_random(type) {
 		random = "";
-
+console.log(type);
 		switch (type) {
 			case 'email':
 				random = random_email();
@@ -41,11 +41,50 @@ $.fn.randomise = function() {
 			case 'name':
 				random = random_full_name();
 				break;
+			case 'zip':
+				random = random_zip_code();
+				break;
+			case 'post code':
+				random = random_post_code();
+				break;
+			case 'city':
+				random = random_town();
+				break;
+			case 'town':
+				random = random_town();
+				break;
+			case 'address':
+				random = random_address();
+				break;
 			default:
 				random = random_string();
 		}
 
 		return random;
+ 	}
+
+	function random_address() {
+		var pieces = [random_number(100), random_street()];
+		return pieces.join(' ');
+	}
+
+	function random_street() {
+  	var names = ["High", "Low", "Church", "Chappel", "Arnold", "Ormskirk", "Ruby", "Victoria", "Hydes", "Hanover", "High Ridge", "Mount", "Bold"];
+		return names[random_number(names.length)] + ' ' + random_road();
+ 	}
+
+	function random_road() {
+  	var names = ["Street", "Road", "Way", "Crescent"];
+		return names[random_number(names.length)];
+ 	}
+
+	function random_post_code() {
+  	var pieces = [random_string(2).toUpperCase(), random_number(99).toString(), ' ', random_number(9).toString(), random_string(2).toUpperCase()];
+		return pieces.join('');
+ 	}
+
+	function random_zip_code() {
+  	return random_number(99999).toString() + '-' + random_number(9999);
  	}
 
 	function random_full_name() {
@@ -62,9 +101,14 @@ $.fn.randomise = function() {
 		return names[random_number(names.length)];
 	}
 
+	function random_town() {
+  	var names = ['London', 'Liverpool', 'Manchester', 'Paris', 'Nice', 'Bordeaux', 'Madrid', 'Barcelona', 'Valencia', 'Berlin', 'Munich', 'Hanover'];
+		return names[random_number(names.length)];
+ 	}
+
 	function has_randomisable_label(el) {
-  	var randomisable_labels = ['email', 'first name', 'last name', 'full name'];
-		var label = $(el).prevAll('label').text().toLowerCase();
+  	var randomisable_labels = ['email', 'first name', 'last name', 'full name', 'zip', 'post code', 'city', 'town', 'address'];
+		var label = $("label[for='"+$(el).attr('id')+"']").text().toLowerCase();
 		var randomisable_label = "";
 
 		$.each(randomisable_labels, function (key, value) {
