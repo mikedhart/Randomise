@@ -31,10 +31,14 @@ Currently supported input types
 ##Installation
 
 ### The quick way
-`wget https://raw.githubusercontent.com/mikedhart/jquery-randomise/master/dist/jquery.randomiser.min.js && cp jquery.randomise.min.js your/project/js/directory`
+```bash
+wget https://raw.githubusercontent.com/mikedhart/jquery-randomise/master/dist/jquery.randomiser.min.js && cp jquery.randomise.min.js your/project/js/directory
+```
 
 ### The complicated way
-`git clone git@github.com:mikedhart/jquery-randomise.git`
+```bash
+git clone git@github.com:mikedhart/jquery-randomise.git
+```
 
 ### Either way
 Which ever way you choose, you'll need to add this to your HTML file
