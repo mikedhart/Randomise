@@ -2,26 +2,26 @@ jquery-randomise
 =============================================================
 jquery-randomise is a JQuery plugin designed to fill forms with random, relevant information. For example:
 
-+Text inputs for names will populate with a random name
-+Text inputs for emaill addresses will populate with a random email address
-+Text inputs for addresses will populate with a random address
-+And so on. Here is the full list of supported randomisations
-贩*First name
-贩*FLast name
-贩*FFull name
-贩*FStreet
-贩*FCity
-贩*FTown
-贩*FPost code
-贩*FZip code
-贩*FDate
-+Anything else will be filled with a random string or number
-+Currently supported input types
-贩*FSelect
-贩*FTextarea
-贩*FInput type="text"
-贩*FInput type="email"
-贩*FInput type="number"
++ Text inputs for names will populate with a random name
++ Text inputs for emaill addresses will populate with a random email address
++ Text inputs for addresses will populate with a random address
++ And so on. Here is the full list of supported randomisations
+路路* First name
+路路* Last name
+路路* Full name
+路路* Street
+路路* City
+路路* Town
+路路* Post code
+路路* Zip code
+路路* Date
++ Anything else will be filled with a random string or number
++ Currently supported input types
+路路* Select
+路路* Textarea
+路路* Input type="text"
+路路* Input type="email"
+路路* Input type="number"
 
 ##Installation
 
