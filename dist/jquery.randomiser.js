@@ -1,7 +1,21 @@
 $.fn.randomise = function() {
 	this.each(function(i, el) {
+		switch ($(el).prop('tagName').toLowerCase()) {
+    	case 'input':
+				randomise_input(el);
+				break;
+			case 'textarea':
+				randomise_textarea(el);
+				break;
+			case 'select':
+				randomise_select(el);
+				break;
+  	}
+	});
+
+	function randomise_input(el) {
 		switch ($(el).attr('type')) {
-    	case 'number':
+			case 'number':
 				$(el).attr('value', random_number());
 				break;
 			case 'date':
@@ -19,12 +33,28 @@ $.fn.randomise = function() {
 			case 'email':
 				$(el).attr('value', random_email());
 				break;
+
 		}
-	});
+	}
+
+	function randomise_select(el) {
+  	var optn = $(el).children('option');
+		optn = optn[random_number(optn.size())];
+		$(el).val($(optn).val()); 
+ 	}
+
+	function randomise_textarea(el) {
+		var text = '';
+		for (i = 0; i < random_number(10); i++) {
+    	text += random_string(random_number(10));
+			text += ' ';
+		}
+
+  	$(el).val(text); 
+ 	}
 
 	function call_random(type) {
 		random = "";
-console.log(type);
 		switch (type) {
 			case 'email':
 				random = random_email();
@@ -33,6 +63,9 @@ console.log(type);
 				random = random_first_name();
 				break;
 			case 'last name':
+				random = random_last_name();
+				break;
+			case 'surname':
 				random = random_last_name();
 				break;
 			case 'full name':
@@ -107,7 +140,7 @@ console.log(type);
  	}
 
 	function has_randomisable_label(el) {
-  	var randomisable_labels = ['email', 'first name', 'last name', 'full name', 'zip', 'post code', 'city', 'town', 'address'];
+  	var randomisable_labels = ['email', 'first name', 'last name', 'full name', 'zip', 'post code', 'city', 'town', 'address', 'surname'];
 		var label = $("label[for='"+$(el).attr('id')+"']").text().toLowerCase();
 		var randomisable_label = "";
 
