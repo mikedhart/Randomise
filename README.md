@@ -2,26 +2,26 @@ jquery-randomise
 =============================================================
 jquery-randomise is a JQuery plugin designed to fill forms with random, relevant information. For example:
 
-*Text inputs for names will populate with a random name
-*Text inputs for emaill addresses will populate with a random email address
-*Text inputs for addresses will populate with a random address
-*And so on. Here is the full list of supported randomisations
-..*First name
-..*Last name
-..*Full name
-..*Street
-..*City
-..*Town
-..*Post code
-..*Zip code
-..*Date
-*Anything else will be filled with a random string or number
-*Currently supported input types
-..*Select
-..*Textarea
-..*Input type="text"
-..*Input type="email"
-..*Input type="number"
++Text inputs for names will populate with a random name
++Text inputs for emaill addresses will populate with a random email address
++Text inputs for addresses will populate with a random address
++And so on. Here is the full list of supported randomisations
+··*First name
+··*FLast name
+··*FFull name
+··*FStreet
+··*FCity
+··*FTown
+··*FPost code
+··*FZip code
+··*FDate
++Anything else will be filled with a random string or number
++Currently supported input types
+··*FSelect
+··*FTextarea
+··*FInput type="text"
+··*FInput type="email"
+··*FInput type="number"
 
 ##Installation
 
@@ -60,7 +60,7 @@ $('textarea, input, select').randomise();
 ```
 
 ## Bugs/Issues
-Please submit all bugs, issues and questions to https://github.com/mikedhart/jquery-randomise/issues
+Please submit all bugs, issues and questions to [the project's issues tracker](https://github.com/mikedhart/jquery-randomise/issues)
 
 ## Contribution
 Create a new topic branch for every separate change you make.
