@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="jquery-randomise : JQuery plugin to generate random strings in specific formats">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>jquery-randomise</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/mikedhart/jquery-randomise">View on GitHub</a>
+
+          <h1 id="project_title">jquery-randomise</h1>
+          <h2 id="project_tagline">JQuery plugin to generate random strings in specific formats</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/mikedhart/jquery-randomise/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/mikedhart/jquery-randomise/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="jquery-randomise" class="anchor" href="#jquery-randomise" aria-hidden="true"><span class="octicon octicon-link"></span></a>jquery-randomise</h1>
+
+<p>jquery-randomise is a JQuery plugin designed to fill forms with random, relevant information. For example:</p>
+
+<ul>
+<li>Text inputs for names will populate with a random name</li>
+<li>Text inputs for emaill addresses will populate with a random email address</li>
+<li>Text inputs for addresses will populate with a random address</li>
+<li>And so on.</li>
+</ul>
+
+<p>Here is the full list of supported randomisations</p>
+
+<ul>
+<li>First name</li>
+<li>Last name</li>
+<li>Full name</li>
+<li>Street</li>
+<li>City</li>
+<li>Town</li>
+<li>Post code</li>
+<li>Zip code</li>
+<li>Date</li>
+<li>Anything else will be filled with a random string or number</li>
+</ul>
+
+<p>Currently supported input types</p>
+
+<ul>
+<li>Select</li>
+<li>Textarea</li>
+<li>Input type="text"</li>
+<li>Input type="email"</li>
+<li>Input type="number"</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="the-quick-way" class="anchor" href="#the-quick-way" aria-hidden="true"><span class="octicon octicon-link"></span></a>The quick way</h3>
+
+<div class="highlight highlight-bash"><pre>wget https://raw.githubusercontent.com/mikedhart/jquery-randomise/master/dist/jquery.randomiser.min.js <span class="pl-k">&amp;&amp;</span> cp jquery.randomise.min.js your/project/js/directory</pre></div>
+
+<h3>
+<a id="the-complicated-way" class="anchor" href="#the-complicated-way" aria-hidden="true"><span class="octicon octicon-link"></span></a>The complicated way</h3>
+
+<div class="highlight highlight-bash"><pre>git clone git@github.com:mikedhart/jquery-randomise.git</pre></div>
+
+<h3>
+<a id="either-way" class="anchor" href="#either-way" aria-hidden="true"><span class="octicon octicon-link"></span></a>Either way</h3>
+
+<p>Which ever way you choose, you'll need to add this to your HTML file</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path/to/js/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path/to/js/jquery.randomise.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h2>
+<a id="example-usage" class="anchor" href="#example-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Usage</h2>
+
+<p>jquery-randomise inputs only</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>input<span class="pl-pds">'</span></span>).randomise();</pre></div>
+
+<p>jquery-randomise selects only</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>select<span class="pl-pds">'</span></span>).randomise();</pre></div>
+
+<p>jquery-randomise text areas only</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>textarea<span class="pl-pds">'</span></span>).randomise();</pre></div>
+
+<p>jquery-randomise all three</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>textarea, input, select<span class="pl-pds">'</span></span>).randomise();</pre></div>
+
+<h2>
+<a id="bugsissues" class="anchor" href="#bugsissues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bugs/Issues</h2>
+
+<p>Please submit all bugs, issues and questions to <a href="https://github.com/mikedhart/jquery-randomise/issues">the project's issues tracker</a></p>
+
+<h2>
+<a id="contribution" class="anchor" href="#contribution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contribution</h2>
+
+<p>Create a new topic branch for every separate change you make.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">jquery-randomise maintained by <a href="https://github.com/mikedhart">mikedhart</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
