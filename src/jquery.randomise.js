@@ -33,8 +33,20 @@ $.fn.randomise = function() {
 			case 'email':
 				$(el).attr('value', random_email());
 				break;
+			case 'radio':
+				randomise_radio(el);
+				break;
+			case 'checkbox':
+				randomise_radio(el);
+				break;
 
 		}
+	}
+
+	function randomise_radio(el) {
+		var els = $('[name='+$(el).attr('name')+']');
+		var intersect = random_number(els.length);
+		$(els[intersect]).trigger('click');
 	}
 
 	function randomise_select(el) {
