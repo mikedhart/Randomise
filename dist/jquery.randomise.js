@@ -44,7 +44,7 @@ $.fn.randomise = function() {
 	}
 
 	function randomise_radio(el) {
-		var els = $('[name='+$(el).attr('name')+']');
+		var els = $('[name="'+$(el).attr('name')+'"]');
 		var intersect = random_number(els.length);
 		$(els[intersect]).trigger('click');
 	}
